@@ -59,15 +59,13 @@ function appendTeachers(teachers) {
 }
 
 function search(value) {
-  console.log(value);
+  value = value.toLowerCase();
   let filteredTeachers = [];
   for (let teacher of teachers) {
     let name = teacher.name.toLowerCase();
-    if (name.includes(value.toLowerCase())) {
+    if (name.includes(value)) {
       filteredTeachers.push(teacher);
     }
   }
-
-  console.log(filteredTeachers);
   appendTeachers(filteredTeachers);
 }
